@@ -1,40 +1,40 @@
-name: IPTV All
-on:
-push:
-schedule:
-- name: daily_task
-description: Run task every day at 4:00 PM
-cron: "0 16 * * *"
-branches:
-- main
-jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- name: Checkout code
-uses: actions/checkout@v2
-- name: Set up Python
-uses: actions/setup-python@v2
-with:
-python-version: 3.x
-- name: Install dependencies
-run: pip install selenium requests
-- name: Install Chrome WebDriver
-run: |
+名称：IPTV全部
+在：
+推：
+浙江：
+-名称: - 名称：每日任务
+description :描述：每天下午 4   : 00 运行任务: 00 PM
+计划任务：“0 16 * * *”
+枢纽：
+- - 主要的
+工作：
+建造者：
+running-on : 运行：ubuntu-latest
+脚步：
+-名称: - 名称：结帐代码
+使用：使用：actions/checkout@v2
+-姓名         : - 名称：设置Python
+使用：使用：actions/setup-python@v2
+和：
+蟒蛇版本      : python-版本：3.x
+-姓名    : - 名称：安装依赖项
+run :运行：pip install selenium requests
+-姓名  : - 名称：安装 Chrome WebDriver
+运行：|
 LATEST_CHROMEDRIVER_VERSION=120.0.6099.109
-curl -sS -o chromedriver_linux64.zip "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chrome-headless-shell-linux64.zip"
-sudo unzip chromedriver_linux64.zip -d /usr/local/bin
+卷曲-sS -o chromedriver_linux64.zip“https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chrome-headless-shell-linux64.zip”“https： //edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chrome-headless-shell-linux64.zip ”
+sudo 解压 chromedriver_linux64.zip -d /usr/local/bin
 rm chromedriver_linux64.zip
-- name: Set chromedriver path
-run: |
+- name   : - name :设置 chromedriver 路径
+运行：|
 sudo ln -sf /usr/local/bin/chrome-headless-shell-linux64/chrome-headless-shell /usr/local/bin/chromedriver
 sudo chmod +x /usr/local/bin/chromedriver
-- name: Run script
-run: python ${{ github.workspace }}/IPTV.py
-- name: 提交更改
-run: |
-git config --local user.email "pntv2024@hotmail.com"
-git config --local user.name "pntv"
-git add .
-git commit *.txt -m "Add generated file"
-git push -f
+- name    : - 名称：运行脚本
+run : 运行： python $ {      { github.workspace }      } /IPTV.py {     { github.workspace }    } /IPTV.py
+-姓名  : - 姓名：提交更改
+运行：|
+git config --local user.email“pntv2025@hotmail.com”
+git config --local user.name “国家电视台”
+git 添加 .
+git commit *.txt -m “添加生成的文件”
+git 推 -f
